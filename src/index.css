@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+html {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  background-image: url(../public/images/fondo.jpeg);
+  background-size: cover;
+  display: flex;
+  font-family: 'Quicksand', sans-serif;
+  height: 100%;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button{
+font-family: 'Julius Sans One', sans-serif;
+}
+
+input, textarea, select {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+input, textarea, select:focus {
+  outline: none;
+  border-color: blue;
+}
+
+
