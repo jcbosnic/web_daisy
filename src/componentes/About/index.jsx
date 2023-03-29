@@ -1,5 +1,4 @@
 import React from 'react'
-import Menu from '../Menu'
 import { Container, BlockPresentation, Title } from "../helperStyle"
 import { PresentationBlock, ImgAboutAvatar, BlockInfo, BlockInfoText } from "./style"  
 
@@ -19,7 +18,6 @@ const About = () => {
               </BlockInfoText>
             </BlockInfo>
         </PresentationBlock>
-        <Menu />
       </BlockPresentation>
     </Container>
   )

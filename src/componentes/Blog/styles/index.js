@@ -1,18 +1,25 @@
 import styled from "styled-components";
 
 export const ContaierRecomedation = styled.div`
-    box-sizing: border-box;
-
+  border-bottom: 1px solid #CCCCCC;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  padding: 0 50px;
+  padding: 10px 0  20px 0;
   width: 100%;
 `;
 
+export const ContainerBlock = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 60px;
+`
+
 export const ImgRecomendation = styled.img`
-  height: 120px;
+  height: 100px;
   margin: 5px;
-  width: 120px;
+  width: 100px;
 `;
 
 export const BlockInfoRecomendation = styled.div`

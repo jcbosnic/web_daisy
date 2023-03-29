@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 780px;
   justify-content: center;
   width: fit-content;
 `;
@@ -18,8 +17,9 @@ export const BlockPresentation = styled.div`
     display: -ms-flexbox;
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: fit-content;
     position: relative;
+    padding: 20px 20px 40px 20px;
     width: 700px;
 `;
 

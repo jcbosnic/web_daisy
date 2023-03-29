@@ -3,35 +3,19 @@ import styled from "styled-components";
 
 export const ContainerMenu = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;;
   justify-content: space-around;
-  margin: auto auto 40px auto;
-  width: 90%;
+  width: fit-content;
 `;
 
 export const ContainerMenuItem = styled.p`
+  border-width: 20%;
   color: #333333;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  border-width: 20%;
+  line-height: 30px;
   position: relative;
-
-  &::before {
-    border-bottom: 1px solid #e04a4a;
-    bottom: -5px;
-    content: "";
-    height: 1px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    width: 70%;
-  }
-
-  &:hover::before {
-    border-bottom: 3px solid #e04a4a;
-  }
 `;
 
 export const SocialContainer = styled.div`

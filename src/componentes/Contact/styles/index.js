@@ -42,10 +42,16 @@ export const Button = styled.button`
   border: none;
   border-radius: 7px;
   color: #ffffff;
+  cursor: pointer;
   font-size: 16px;
   height: 45px;
   margin: 20px 0 0 auto;
   width: 200px;
+
+  &:hover {
+    background: #cccccc;
+    color: #333333;
+  }
 `;
 
 export const ErrorMessage = styled.span`

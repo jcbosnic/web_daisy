@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import { Container, BlockPresentation, Title } from "../helperStyle";
 import Menu from '../Menu';
 
@@ -7,34 +8,44 @@ import { ContaierRecomedation,
          BlockInfoRecomendation, 
          NameRecomendation, 
          DateRecomendation, 
-         DescriptionRecomendation 
+         DescriptionRecomendation,
+         ContainerBlock
       } from './styles'
 
 
+ const URL = "./database/user.json";  
+
 const Blog = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get(URL)
+    .then( res => setData(res.data))
+    .catch( err => console.log(err));
+  }, []);
+
   return (
 <Container>
-  <BlockPresentation>
-      <Title>Recomendation</Title>
-      <ContaierRecomedation>
-        <ImgRecomendation src="./images/foto1.png" />
-        <BlockInfoRecomendation>
-          <NameRecomendation>
-            Nombre Usuario
-          </NameRecomendation>
-          <DateRecomendation>
-            Fecha de pubicación
-          </DateRecomendation>
-          <DescriptionRecomendation>
-              Muy recomendada profesional, me encanta como aborda la terapia 
-              con distintas técnicas  gracias a sus múltiples especializaciones, 
-              además no es de los típicos psicólogos que solo escuchan y miran el reloj.
-              1000% recomendada, me encanta!
-          </DescriptionRecomendation>
-        </BlockInfoRecomendation>
-      </ContaierRecomedation>
       <Menu />
-  </BlockPresentation>
+  <BlockPresentation>
+<ContainerBlock>
+      <Title>Recomendation</Title>
+      {
+        data.map((item, index) => (
+          <ContaierRecomedation key={index}>
+            <ImgRecomendation src={item.avatar} alt={item.name} />
+            <BlockInfoRecomendation>
+              <NameRecomendation>{item.name}</NameRecomendation>
+              <DateRecomendation>{item.date}</DateRecomendation>
+              <DescriptionRecomendation>{item.description}</DescriptionRecomendation>
+            </BlockInfoRecomendation>
+          </ContaierRecomedation>
+        ))
+      }
+    </ContainerBlock> 
+      </BlockPresentation>
 </Container>
   )
 }

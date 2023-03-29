@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import Menu from "../Menu";
 import { Title } from "../helperStyle"
 
 import {
@@ -17,6 +16,8 @@ import {
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = d => console.log(d, 'entramos');
+  const [ statusMessage, setStatusMessage ] = useState('');
+
 
   const form = useRef();
 
@@ -25,6 +26,9 @@ const Contact = () => {
     emailjs.sendForm('service_i7xn5jd', 'template_eke7oki', form.current, 'MRmz5szHvur34n9vg')
       .then((result) => {
           console.log(result.text);
+          setStatusMessage('Mensaje enviado')
+          setTimeout(() => setStatusMessage(false), 3000);
+          form.current.reset();
       }, (error) => {
           console.log(error.text);
       });
@@ -49,8 +53,8 @@ const Contact = () => {
           <TextArea {...register('mensaje', {required: true})} name="mensaje"  />
           {errors.message && <ErrorMessage>debes ingresar una mensaje</ErrorMessage>}
           <Button value="Send">enviar</Button>
+          <p>{statusMessage}</p>
         </Form>
-        <Menu />
       </ContainerForm>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import Menu from "../Menu";
 import {  Container, BlockPresentation } from "../helperStyle"
 import {
   Avatar,
@@ -18,7 +17,6 @@ const Home = () => {
         <Divider />
         <Position>Psicóloga Clínica Junguiana </Position>
         <Studies>Magíster en psicología clínica Junguiana U.Mayor.</Studies> 
-        <Menu />
       </BlockPresentation>
     </Container>
   );
